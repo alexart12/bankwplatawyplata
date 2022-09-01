@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      >
+
+    <h:head>
+
+
+    </h:head>
+    <h:body>
+        <ui:composition template="template2.xhtml">
+
+
+            sfsdfsdf
+            <ui:define name="header">
+
+
+
+
+
+
+
+
+
+
+            </ui:define>
+            <ui:define name="content">
+
+
+
+<div>
+  <h3>Wprowadz Wplata na konto </h3>
+   <div>
+    
+      
+      <p>
+      <br></br>
+    
+      <!--table-->
+          
+      <h:form>     
+      <table>
+      
+    <tr><td>Kwota : </td><td>              <h:inputText value="#{przelew.kwota}"></h:inputText><br></br></td></tr>
+          
+    <tr><td>Data : </td><td>              <h:inputText value="#{przelew.data_zlozenia}"></h:inputText><br></br></td></tr>
+    Nadawca
+    <tr><td>Imie : </td><td>               <h:inputText value="#{bank.imie}"></h:inputText>><br></br></td></tr>
+    <tr><td>nazwisko : </td><td>           <h:inputText value="#{bank.nazwisko}"></h:inputText><br></br></td></tr>
+    Odbiorca
+     <tr><td>Czy podmiot gospodarczy :</td><td><input type="checkbox" name="check1" value="ON" /><br></br></td></tr>
+    <tr><td>Nazwa : </td><td>               <h:inputText value="#{przelew.nazwa}"></h:inputText>><br></br></td></tr>
+    <tr><td>Nazwa cd : </td><td>           <h:inputText value="#{przelew.nazwa2}"></h:inputText><br></br></td></tr>
+    
+    
+    
+    <tr><td>Tytulem: </td><td><h:inputText value="#{przelew.tytulem}"></h:inputText><br></br></td></tr>
+    <tr><td>Nr rachunek bieżący : </td><td><h:inputText value="#{bank.numer_rachunku}"></h:inputText><br></br></td></tr>
+    <tr><td>Czy karte czy gotowkowo otrzym,uje przy rejestracji :</td><td><input type="checkbox" name="check1" value="ON" /><br></br></td></tr>
+    <tr><td>Czy karte przesłac listownie potwierdzenie  :</td><td><input type="checkbox" name="check1" value="ON" /><br></br></td></tr>
+    
+    <tr><td>Data Wystawienia platnosci : </td><td><h:inputText value="#{bank.data_wydania}"></h:inputText><br></br></td></tr>
+    <tr><td>Data Wazności karty : </td><td>  <h:inputText value="#{bank.data_waznosci}"></h:inputText><br></br></td></tr>
+    
+    <tr><td></td><td><br></br></td></tr>   
+    <tr><td><button value="wPorz" action="welcome.xhtml" /><a>sdf</a></td><td>    <h:commandButton value="zatwierdz" action="#{przelew.dodajWplata(przelew,rachuneka)}"/><br></br></td></tr> 
+      
+      
+      
+      
+      
+      
+      </table>
+   
+   </h:form>
+    
+    </p>
+  </div>
+    </div>
+
+
+
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </h:body>
+
+</html>

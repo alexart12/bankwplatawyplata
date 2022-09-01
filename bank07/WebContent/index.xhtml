@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"   
+xmlns:h = "http://java.sun.com/jsf/html"
+xmlns:f = "http://java.sun.com/jsf/core"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:#6abadeba;  
+    font-family: 'Arial';  
+}  
+.login{  
+        width:382px;  
+        overflow: hidden;  
+        padding: 50px;   
+        margin: 50px 0 0 450px; 
+        background: #23463f;  
+        border-radius: 60px ;  
+        color:white;  
+}     
+        </style>
+    </h:head>
+    <h:body>
+       <br></br><br></br><br></br>
+       <div class="login">
+        <h:form id="login">
+         <span>aLogin Authentication :</span>   <br></br>
+        <h:inputText  id="Uname" value="#{person.name}"></h:inputText><br></br>
+        <br></br>
+        <h:inputSecret  id="Pass" value="#{person.password}"></h:inputSecret>><br></br>
+        <br></br>
+        <h:commandButton  value="     Login    " action="welcome"></h:commandButton>
+         <br></br> <br></br>
+        <input type="checkbox" id="check"> </input> 
+        
+        <span>Remember me</span>    
+        <br></br>    
+        </h:form>
+                 
+        </div>
+       
+       
+    </h:body>
+</html>
+

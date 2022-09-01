@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      >
+     
+    <h:head>
+       
+        
+    </h:head>
+    <h:body>
+            <ui:composition template="template2.xhtml">
+   
+    	
+       sfsdfsdf
+            <ui:define name="header">
+    		
+                
+                
+                
+                
+                
+                
+                
+                
+                
+    		</ui:define>
+            <ui:define name="content">
+    		
+                
+                
+                
+                <div>
+                
+                
+                
+  <h3>              
+ <p style="border: solid 2px;">Lokata</p>
+ 
+ </h3>
+  <br />
+  <h3>Wprowadz dane lokaty</h3>
+  <div>
+  
+  <label for="miesiace">Wybierz czas trwania lokaty</label>
+
+
+<select name="miesiace" id="miesiace">
+  <optgroup label="Lokata nowa">
+    <option value="#{lokata.kwotaLokaty}">6 miesiecy</option>
+    <option value="12">12 miesiecy</option>
+    <option value="18">18 miesiecy</option>
+    <option value="24">24 miesiecy</option>
+  </optgroup>
+  <optgroup label="Odnowienie Lokaty">
+    <option value="6">6 miesiecy</option>
+    <option value="12">12 miesiecy</option>
+  </optgroup>
+</select> 
+<h:form>
+<h:selectOneMenu value="#{lokata.smiesiace}">
+<f:selectItem itemValue="6" itemLabel="lokata 6 miesieczna"/> 
+<f:selectItem itemValue="12" itemLabel="lokata 12 miesieczna"/> 
+<f:selectItem itemValue="18" itemLabel="lokata 18 miesieczna"/> 
+<f:selectItem itemValue="24" itemLabel="lokata 24 miesieczna"/> 
+</h:selectOneMenu>
+
+<br></br>
+ Kwota lokaty: <h:inputText value="#{lokata.ustawionaKwotaLokaty}"></h:inputText>
+<br></br>
+<br></br>
+<br></br>
+ Procent: <h:inputText value="#{lokata.procent}"></h:inputText>
+<br></br>
+<br></br>
+               Data rozpoczecia lokaty: 
+               
+               <h:inputText value="#{lokata.dataZalozenia}" type="date" placeholder="Calendar"></h:inputText>
+               
+               
+                <br></br>
+  <h:commandButton value="zatwierdz" action="#{lokata.sqlLokata_}"/><br></br>
+   </h:form>
+    </div>
+  <h3>Wykaz miesieczny</h3>
+  <div>
+  
+   
+   				<h:dataTable value = "#{lokata.lilokata}" var = "lokata"
+                             styleClass = "employeeTable"
+                             headerClass = "employeeTableHeader"
+                             rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+
+                    <h:column>    				
+                        <f:facet name = "header">Miesiac </f:facet>    				
+                            #{lokata.dataZalozenia}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Kwota lokaty</f:facet>
+                            #{lokata.kwotaLokaty}
+                    </h:column>
+
+                </h:dataTable>
+    
+    
+    
+				 <h:dataTable value = "#{bank.sqlRachunki2}" var = "rachunek"
+                             styleClass = "employeeTable"
+                             headerClass = "employeeTableHeader"
+                             rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+
+                    <h:column>    				
+                        <f:facet name = "header">Identyfikator rachunku </f:facet>    				
+                            #{rachunek.id}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Numer rachunku</f:facet>
+                            #{rachunek.numer_rachunku}
+                    </h:column>
+
+                                   
+                </h:dataTable>    
+    
+    </div>
+  <h3>Section 2</h3>
+  <div>
+  
+    <p>
+        Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    Class apte<br></br>
+    <input type="checkbox" name="check1" value="ON" />
+                    Rachunek bieżący : 
+                    <input type="text"></input>
+    </p>
+  </div>
+  <h3>Section 2</h3>
+  <div>
+    <p>
+    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+    suscipit faucibus urna.
+    <br></br><input type="checkbox" name="check1" value="ON" />
+                    Rachunek bieżący : <br></br>
+                    <input type="text"></input>
+    </p>
+  </div>
+  <h3>Section 3</h3>
+  <div>
+    <p>
+    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+    <br></br><input type="checkbox" name="check1" value="ON" />
+                    Rachunek bieżący : 
+                    <input type="text"></input>
+                    <br></br><input type="checkbox" name="check1" value="ON" />
+                    Rachunek bieżący : 
+                    <br></br><input type="text"></input>
+                    <br></br><input type="checkbox" name="check1" value="ON" />
+                    Rachunek bieżący : 
+                    <input type="text"></input>
+    </p>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+  <h3>Section 4</h3>
+  <div>
+    <p>
+    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+    mauris vel est.<br></br><input type="checkbox" name="check1" value="ON" />
+                    Rachunek bieżący : 
+                    <br></br><input type="text"></input>
+                    <br></br><input type="checkbox" name="check1" value="ON" />
+                    Rachunek bieżący : 
+                    <br></br><input type="text"></input>
+                    <br></br><input type="checkbox" name="check1" value="ON" />
+                    <br></br>Rachunek bieżący : 
+                    <br></br><input type="text"></input>
+    </p>
+    <p>
+    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    Class aptent taciti <br></br>sociosqu ad litora torquent per conubia nostra, per
+    inceptos himenaeos.
+    </p>
+  </div>
+</div>  	
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+    		</ui:define>
+            
+        </ui:composition>
+    	
+    </h:body>
+
+</html>

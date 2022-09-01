@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      >
+
+    <h:head>
+
+
+    </h:head>
+    <h:body>
+        <ui:composition template="template2.xhtml">
+
+
+            sfsdfsdf
+            <ui:define name="header">
+
+
+
+
+            </ui:define>
+            <ui:define name="content">
+
+
+                <h2>Szczegoly platnosci dla rachunku</h2>
+ Numer rachunku : #{rachuneka.numerAktualnegoRachunkuZalogowanegoClienta}
+            <h:dataTable value = "#{konto.sqlKonto}" var = "konto"
+                             styleClass = "employeeTable"
+                             headerClass = "employeeTableHeader"
+                             rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+
+                    <h:column>    				
+                        <f:facet name = "header">Identyfikator rachunku </f:facet>    				
+                            #{konto.id}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Nazwa </f:facet>
+                            #{konto.nazwa}
+                    </h:column>
+
+                <h:column>
+                        <f:facet name = "header">Wplata srodkow</f:facet>
+                            #{konto.wplata}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Wyplata srodkow</f:facet>
+                            #{konto.wyplata}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Srodki dostepne</f:facet>
+                            #{konto.stan}
+                    </h:column>
+                
+                </h:dataTable>
+
+
+
+
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </h:body>
+
+</html>

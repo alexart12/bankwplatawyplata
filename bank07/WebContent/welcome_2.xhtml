@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      >
+
+    <h:head>
+
+
+    </h:head>
+    <h:body>
+        <ui:composition template="template2.xhtml">
+
+
+            sfsdfsdf
+            <ui:define name="header">
+
+
+
+
+
+
+
+
+
+
+            </ui:define>
+            <ui:define name="content">
+
+
+
+
+                <h2>Rachunek Bieżący</h2>
+
+            <h:dataTable value = "#{userData.sqlEmplyees}" var = "employee"
+                             styleClass = "employeeTable"
+                             headerClass = "employeeTableHeader"
+                             rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+
+                    <h:column>    				
+                        <f:facet name = "header">Nazwa platnosci </f:facet>    				
+                            #{employee.name}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Department</f:facet>
+                            #{employee.department}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Nr Oddziału Banku</f:facet>
+                            #{employee.age}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Kwota Płatności</f:facet>
+                            #{employee.salary}
+                    </h:column>
+                </h:dataTable>
+
+
+
+
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </h:body>
+
+</html>

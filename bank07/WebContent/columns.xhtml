@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"   
+xmlns:h = "http://java.sun.com/jsf/html"
+xmlns:f = "http://java.sun.com/jsf/core"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+    <head>
+        <style>
+            
+            body{
+                margin: 0;
+                
+            }
+            .container{
+                display: grid;
+                width: 100vw;
+                height: 100vh;
+                
+                font-family: 'Quicksand',sans-serif;
+                font-weight: bold;
+                font-size: 20px;
+                grid-template-columns: 160px 1fr 1fr 1fr;
+                grid-template-rows:  repeat(4, 1fr);
+                gap:10px;
+                padding: 10px;
+                box-sizing: border-box;
+                border-top: 1px solid #dfdfdf;
+                
+            }
+            .container div{
+                padding: 10px;
+                border: 1px solid #000000;
+                border-top: 1px solid #dfdfdf;
+                
+            }
+            .header {
+                
+                grid-column-start: 1;
+                grid-column-end: span 4;
+                border: 1px solid #000000;
+            }
+            
+            .content-large{
+                grid-row-start:2;
+                grid-row-end: span 4;
+                border: 1px solid #000000;
+                grid-column-start: 1;
+                grid-column-end:  2;
+                
+            }
+            .content-small{
+                 grid-column-start: 2;
+                grid-column-end:  span 4;
+                border: 1px solid #000000;
+            }
+            .footer {
+                
+                grid-column-start: 1;
+                grid-column-end:  span 4;
+                border: 1px solid #000000;
+            }
+            
+        </style>
+        
+        
+        
+       </head>
+    <body>
+        
+        <div class='container'>
+            
+            <dir class="header">Header</dir>
+            <dir class="content-large">Content #1a</dir>
+            <dir class="content-small">Content #1b</dir>
+            <dir class="content-small">Content 2</dir>
+             <dir class="content-small">Content 2b</dir>
+             <dir class="footer">Footer</dir>
+        </div>
+            
+       
+    </body>
+</html>

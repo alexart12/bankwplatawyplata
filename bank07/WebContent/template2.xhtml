@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+    <head>
+        <style>
+            :root{
+                --blue: #23463f;
+                --dark-blue: #007043;
+                --background: #0181118;
+                --grey: #d7d7d7;
+                --light-grey: #878787;
+            }
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: sans-serif;
+            }
+            body{
+
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                background: var(--background);
+
+            }
+            .menu{
+                width: 190px;
+                border-radius: 0.2rem;
+                overflow: hidden;
+
+
+            }
+            .menu a{
+                text-decoration: none;
+
+
+            }
+            .menu-item{
+                list-style: none;
+                border-top: 1px solid var(--dark-blue);
+                overflow: hidden;
+                flex: row-reverse;
+            }
+            .btn{
+                display: block;
+                padding: 1rem;
+                background: var(--blue);
+                color: white;
+                position: relative;
+            }
+            .btn::before{
+                content: '';
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                background: var(--blue);
+                left: 1.5rem;
+                bottom: -0.5rem;
+                transform: rotate(45deg);
+            }
+            .menu-item_sub{
+                background: var(--grey);
+                overflow: hidden;
+                transition: max-height 0.3s;
+                max-height: 0;
+            }
+            .menu-item_sub a{
+                display: block;
+                padding: 1rem 1.6rem;
+                color: black;
+                font-size: 0.9rem;
+                position: relative;
+                border-bottom: 1px solid var(--light-grey);
+
+            }
+            .menu-item:target .menu-item_sub{
+                max-height: 10em;
+
+            }
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            /* Style the header */
+            .header {
+                background-color: #f1f1f1;
+                padding: 20px;
+                text-align: center;
+            }
+
+            /* Style the top navigation bar */
+            .topnav {
+                overflow: hidden;
+                background-color: #23463f;
+                color: white;
+            }
+
+            /* Style the topnav links */
+            .topnav a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            /* Change color on hover */
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            /* Create three equal columns that floats next to each other */
+            .column {
+                float: left;
+                width: 40%;
+                padding: 15px;
+            }
+            .columnmenu {
+                float: left;
+                width: 20%;
+                padding: 15px;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+            @media screen and (max-width:600px) {
+                .column {
+                    width: 100%;
+                }
+            }
+            #header {
+                height: 30px;
+                position: fixed;
+                
+                align-items: center;
+                background: linear-gradient(#444444, #333333);
+                color: #bbbbbb;
+            }
+
+            #headerContent {
+                margin-left: 10px;
+            }
+
+            #page {
+                display: flex;
+            }
+
+            #sideBar {
+                min-width: 160px;
+                max-width: 160px;
+                background: red;
+            }
+
+            #content {
+                width: 100%;
+                background: white;
+            }
+            .header {
+
+                grid-column-start: 1;
+                grid-column-end: span 4;
+                border: 1px solid #000000;
+                background: #007043;
+                color:white;
+            }   
+
+            body{
+                margin: 0;
+
+            }
+            .container{
+                display: grid;
+                width: 100vw;
+                height: 100vh;
+
+
+
+
+                grid-template-columns: 190px 1fr 1fr 1fr;
+                grid-template-rows:  80px 1fr 1fr 1fr 1fr;
+                gap:5px;
+                padding: 5px;
+                box-sizing: border-box;
+                border-top: 1px solid #dfdfdf;
+
+            }
+
+            .header {
+
+                grid-column-start: 1;
+                grid-column-end: span 4;
+                height: 80px;
+            }
+
+            .content-large{
+                grid-row-start:2;
+                grid-row-end: span 4;
+
+                grid-column-start: 1;
+                grid-column-end:  2;
+
+            }
+            .content-small{
+                grid-column-start: 2;
+                grid-column-end:  span 4;
+
+            }
+            .footer {
+
+                grid-column-start: 1;
+                grid-column-end:  span 4;
+
+            }
+            .vertical-menu {
+  width: 200px;
+  font-family: 'Arial'
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #23463f;
+  color: white;
+}
+.employeeTable {   
+   border-collapse:collapse;
+   border:1px solid #000000;
+}
+
+.employeeTableHeader {
+   text-align:center;
+   background:none repeat scroll 0 0 #23463f;
+   border-bottom:1px solid #000000;  
+   color: white;
+   padding:1px;
+   font-family: 'Arial'
+}
+
+.employeeTableOddRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #FFFFFFF;
+   font-family: 'Arial'
+}
+
+.employeeTableEvenRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #D3D3D3;
+   font-family: 'Arial'
+}
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.ui-state-highlight a,
+.ui-widget-content .ui-state-highlight a,
+.ui-widget-header .ui-state-highlight a {
+	color: #4CAF50;
+}
+.ui-accordion .ui-accordion-header {
+	display: block;
+	cursor: pointer;
+	position: relative;
+	margin: 2px 0 0 0;
+	padding: .5em .5em .5em .7em;
+	font-size: 100%;
+       background-color: #23463f;
+  color: white;
+}
+.ui-accordion .ui-accordion-content {
+	
+	border-top: 0;
+	overflow: auto;
+}
+
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 300px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+
+.btn-group button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 100%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+  
+  
+@font-face{
+    font-family: 'Digital-7';
+    src:  url('fonts/digital-7.ttf') format('woff2'),   b ,g,mdrx
+    url('digital-7.woff') format('woff');
+}
+.clockdate-wrapper {
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding:25px;
+    max-width:350px;
+    width:100%;
+    text-align:center;
+    border-radius:5px;
+    margin:0 auto;
+  
+}
+#clock{
+    font-family: Digital-7, 'sans-serif';
+    font-size:60px;
+    text-shadow:0px 0px 1px #fff;
+    color:#fff;
+}
+#clock span {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow:0px 0px 1px #333;
+    font-size:50px;
+    position:relative;
+    top:-5px;
+    left:10px;
+}
+#date {
+    letter-spacing:3px;
+    font-size:14px;
+    font-family:arial,sans-serif;
+    color:#fff;
+}  
+  
+  
+  
+  
+  
+  
+  
+        </style>
+
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+
+
+
+
+
+        <div class='container'>
+
+            <div class="header"><b>Bank Spoldzielczy s.a.</b>
+            <BR />
+            
+<div>Aktualnie zalogowany: #{rachuneka.nazwisko}  Numer rachunku : #{rachuneka.numerAktualnegoRachunkuZalogowanegoClienta}</div>           
+            </div>
+            <div class="content-large">
+
+                <ui:insert name="menu" >
+                    <ui:include src="menu.xhtml" />
+                </ui:insert>
+            </div>
+
+
+
+            <div class="content-small">
+                <ui:insert name="content" >
+
+                    <ui:include src="commonContent.xhtml" />
+
+                </ui:insert></div>
+            <div class="content-small"></div>
+            <div class="footer">Footer</div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>

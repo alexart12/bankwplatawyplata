@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      >
+
+    <h:head>
+
+   <script>
+    
+    function startTime() {
+        var today = new Date();
+        var hr = today.getHours();
+        var min = today.getMinutes();
+        var sec = today.getSeconds();
+
+        hr = (hr == 0) ? 12 : hr;
+        hr = (hr > 12) ? hr - 12 : hr;
+  
+        hr = checkTime(hr);
+        min = checkTime(min);
+        sec = checkTime(sec);
+        document.getElementById("clock").innerHTML = hr + ":" + min + ":" + sec + " " + ap;
+        
+        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        var curWeekDay = days[today.getDay()];
+        var curDay = today.getDate();
+        var curMonth = months[today.getMonth()];
+        var curYear = today.getFullYear();
+        var date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
+        document.getElementById("clock").innerHTML = date;
+        
+        var time = setTimeout(function(){ startTime() }, 500);
+    }
+    function checkTime(i) {
+       
+    	
+        return "01";
+    }
+    startTime();
+    
+    </script>
+    </h:head>
+    <h:body onload="startTime()">
+    
+    
+    
+ 
+    
+    
+    
+    
+    
+        <ui:composition template="template2.xhtml">
+
+
+            sfsdfsdf
+            <ui:define name="header">
+
+
+
+
+
+
+
+
+
+
+            </ui:define>
+            <ui:define name="content">
+
+
+
+
+                <h2>Rachunek Bieżący</h2>
+ 
+ 			<h:commandButton value="Drukuj raport" action="#{bank.drukujRaport}"/><br></br>
+           
+           
+           
+    <div id="clock"></div>
+    <div id="date"></div>
+ 
+      <h:form>     
+           
+           <h:dataTable value = "#{bank.sqlRachunkiObslugiwany}" var = "rachunek"
+                             styleClass = "employeeTable"
+                             headerClass = "employeeTableHeader"
+                             rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+
+                    <h:column>    				
+                        <f:facet name = "header">Identyfikator rachunku </f:facet>    				
+                            #{rachunek.id}
+                    </h:column>
+                    
+                    <h:column>    				
+                        <f:facet name = "header">Nazwisko klienta </f:facet>    				
+                            #{rachunek.nazwisko}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Numer rachunku</f:facet>
+                            #{rachunek.numer_rachunku}
+                    </h:column>
+				
+                                   
+                </h:dataTable>
+       <br></br><br></br>    
+            <h:dataTable value = "#{bank.sqlRachunki}" var = "rachunek"
+                             styleClass = "employeeTable"
+                             headerClass = "employeeTableHeader"
+                             rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+
+                    <h:column>    				
+                        <f:facet name = "header">Identyfikator rachunku </f:facet>    				
+                            #{rachunek.id}
+                    </h:column>
+                    
+                    <h:column>    				
+                        <f:facet name = "header">Nazwisko klienta </f:facet>    				
+                            #{rachunek.nazwisko}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Numer rachunku</f:facet>
+                            #{rachunek.numer_rachunku}
+                    </h:column>
+					<h:column>
+                        <f:facet name = "header">Klient obslugiwany</f:facet>
+                            #{rachunek.czy_obslugiwany}
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Wybierz</f:facet>
+                            <h:commandButton value="wybierz" action="#{rachuneka.wybierzKlient3(rachunek)}"/>
+                    </h:column>
+                    
+                                   
+                </h:dataTable>
+
+
+
+</h:form>
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </h:body>
+
+</html>

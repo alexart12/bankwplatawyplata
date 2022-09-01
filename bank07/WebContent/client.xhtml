@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+     
+    <h:head>
+       
+        
+    </h:head>
+    <h:body>
+            <ui:composition template="template2.xhtml">
+   
+    	
+       sfsdfsdf
+            <ui:define name="header">
+    		
+                
+                
+                
+                
+                
+                
+                
+                
+                
+    		</ui:define>
+            <ui:define name="content">
+    		
+                
+                
+                
+                <div>
+  <h3>Rejestracja nowego klienta:Class apte </h3>
+  <div>
+    
+      
+      <p>
+      <br></br>
+    
+      <!--table-->
+          
+      <h:form>     
+      <table>
+      
+          
+    <tr><td>Czy osoba fizyczna :</td><td><input type="checkbox" name="check1" value="ON" /><br></br></td></tr>
+    <tr><td>Czy podmiot gospodarczy :</td><td><input type="checkbox" name="check1" value="ON" /><br></br></td></tr>
+    <tr><td>Data Zalozenia Rachunku: </td><td>              <h:inputText value="#{bank.data_zalozenia}"></h:inputText><br></br></td></tr>
+    <tr><td>Imie : </td><td>               <h:inputText value="#{bank.imie}"></h:inputText>><br></br></td></tr>
+    <tr><td>nazwisko : </td><td>           <h:inputText value="#{bank.nazwisko}"></h:inputText><br></br></td></tr>
+    <tr><td>Data urodzenia : </td><td>           <h:inputText value="#{bank.data_urodzenia}"></h:inputText><br></br></td></tr>
+    <tr><td>Narodowość : </td><td>         <h:inputText value="#{bank.narodowosc}"></h:inputText><br></br></td></tr>
+    <tr><td>Numer dowodu osobistego : </td><td><h:inputText value="#{bank.nr_dowodu}"></h:inputText><br></br></td></tr>
+    <tr><td>PESEL  : </td><td>             <h:inputText value="#{bank.pesel}"></h:inputText><br></br></td></tr>
+    <tr><td>NIP : </td><td>                <h:inputText value="#{bank.nip}"></h:inputText><br></br></td></tr>
+    <tr><td>REGON : </td><td>              <h:inputText value="#{bank.regon}"></h:inputText><br></br></td></tr>
+
+    <tr><td>Zawod : </td><td>              <h:inputText value="#{bank.zawod}"></h:inputText><br></br></td></tr>
+    <tr><td>Zatrudnienie od  : </td><td>   <h:inputText value="#{bank.zatrudnienie_od}"></h:inputText><br></br></td></tr>
+    <tr><td>Zatrudnienie do  : </td><td>   <h:inputText value="#{bank.zatrudnienie_do}"></h:inputText><br></br></td></tr>
+    <tr><td>Wykonywany zawód  : </td><td>  <h:inputText value="#{bank.wykonyway_zawod}"></h:inputText><br></br></td></tr>
+    <tr><td>Nr rachunek bieżący : </td><td><h:inputText value="#{bank.numer_rachunku}"></h:inputText><br></br></td></tr>
+    <tr><td>Czy domyślny :</td><td><input type="checkbox" name="check1" value="ON" /><br></br></td></tr>
+    <tr><td>Czy karta do bankomatów :</td><td><input type="checkbox" name="check1" value="ON" /><br></br></td></tr>
+    
+    <tr><td>Nr Karty debetowej : </td><td> <h:inputText value="#{bank.nr_karty}"></h:inputText><br></br></td></tr>   
+    <tr><td>Czy Visa :<input type="checkbox" name="check1" value="ON" /></td><td>Czy Maestro :<input type="checkbox" name="check1" value="ON" /><br></br></td></tr>
+    <tr><td>Czy karte otrzym,uje przy rejestracji :</td><td><input type="checkbox" name="check1" value="ON" /><br></br></td></tr>
+    <tr><td>Czy karte przesłac listownie :</td><td><input type="checkbox" name="check1" value="ON" /><br></br></td></tr>
+    
+    <tr><td>Data Wystawienia karty : </td><td><h:inputText value="#{bank.data_wydania}"></h:inputText><br></br></td></tr>
+    <tr><td>Data Wazności karty : </td><td>  <h:inputText value="#{bank.data_waznosci}"></h:inputText><br></br></td></tr>
+    
+    <tr><td></td><td><br></br></td></tr>   
+    <tr><td><button value="wPorz" action="welcome.xhtml" /><a>sdf</a></td><td>    <h:commandButton value="zatwierdz" action="#{bank.addRachunek}"/><br></br></td></tr> 
+      
+      
+      
+      </table>
+   
+   </h:form>
+    
+    </p>
+  </div>
+    </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+    		</ui:define>
+         
+        </ui:composition>
+    	
+    </h:body>
+
+</html>
